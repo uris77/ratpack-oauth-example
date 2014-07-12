@@ -1,4 +1,5 @@
 import com.uris.ratpack.examples.oauth.AuthPathAuthorizer
+import org.pac4j.oauth.client.Google2Client
 import org.pac4j.openid.client.GoogleOpenIdClient
 import org.pac4j.openid.profile.google.GoogleOpenIdProfile
 import ratpack.pac4j.Pac4jModule
@@ -16,7 +17,10 @@ ratpack {
         bind Pac4jCallbackHandler
         GoogleOpenIdClient openIdClient = new GoogleOpenIdClient()
         openIdClient.callbackUrl = "http://ratpack-oauth.stumblingoncode.com/pac4j-callback"
-        add new Pac4jModule(openIdClient, new AuthPathAuthorizer())
+        Google2Client google2Client = new Google2Client()
+        google2Client.callbackUrl = "http://ratpack-oauth.stumblingoncode.com/pac4j-callback"
+        //add new Pac4jModule(openIdClient, new AuthPathAuthorizer())
+        add new Pac4jModule(google2Client, new AuthPathAuthorizer())
     }
 
     handlers {
