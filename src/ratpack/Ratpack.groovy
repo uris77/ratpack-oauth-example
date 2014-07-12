@@ -18,7 +18,7 @@ ratpack {
         GoogleOpenIdClient openIdClient = new GoogleOpenIdClient()
         openIdClient.callbackUrl = "http://ratpack-oauth.stumblingoncode.com/pac4j-callback"
         Google2Client google2Client = new Google2Client()
-        google2Client.callbackUrl = "http://ratpack-oauth.stumblingoncode.com/pac4j-callback"
+        //google2Client.callbackUrl = "http://ratpack-oauth.stumblingoncode.com/pac4j-callback"
         //add new Pac4jModule(openIdClient, new AuthPathAuthorizer())
         add new Pac4jModule(google2Client, new AuthPathAuthorizer())
     }
