@@ -15,7 +15,7 @@ ratpack {
         add new MapSessionsModule(10, 5)
         bind Pac4jCallbackHandler
         GoogleOpenIdClient openIdClient = new GoogleOpenIdClient()
-        openIdClient.callbackUrl = "http://aqueous-ravine-3371.herokuapp.com/pac4j-callback"
+        openIdClient.callbackUrl = "http://ratpack-oauth.stumglincode.com/pac4j-callback"
         add new Pac4jModule(openIdClient, new AuthPathAuthorizer())
     }
 
