@@ -32,7 +32,7 @@ ratpack {
 
         prefix("admin") {
             get("secured"){
-                def userProfile = request.get(GoogleOpenIdProfile)
+                def userProfile = request.get(Google2Client)
                 render groovyTemplate([userName: userProfile.displayName], "secured.html")
             }
         }
