@@ -32,8 +32,9 @@ ratpack {
 
         prefix("admin") {
             get("secured"){
-                def userProfile = request.get(Google2Client)
-                render groovyTemplate([userName: userProfile.displayName], "secured.html")
+                def userProfile = request.maybeGet(Google2Client)
+                println "userProfile: ${userProfile}"
+                render groovyTemplate([userName: userProfile?.displayName], "secured.html")
             }
         }
 
