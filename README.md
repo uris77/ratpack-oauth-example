@@ -12,3 +12,5 @@ GOOGLE_SECRET=UUUU-GOOGLE-SECRET-KEY-ZZZZ
 ```
 
 You also need to create your google api keys.
+
+You can also view a working demo here [http://ratpack-oauth.stumblingoncode.com](http://ratpack-oauth.stumblingoncode.com).
