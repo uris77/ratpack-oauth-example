@@ -1,4 +1,4 @@
-ratpack-examples
+OAuth with Ratpack
 ================
 
-A Compilation of Ratpack Examples
+An OAuth example with Ratpack.
