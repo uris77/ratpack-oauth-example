@@ -36,10 +36,14 @@ run{
     try {
         properties.load(inputStream)
         System.setProperties(properties)
+        System.getProperties().each { prop ->
+            systemProperty prop.key, prop.value
+        }
+    }catch (FileNotFoundException ex) {
+        println "Could not find env file"
+        println "This is normal in production."
     } catch (Exception e) {
         e.printStackTrace()
     }
-    System.getProperties().each { prop ->
-        systemProperty prop.key, prop.value
-    }
+
 }
