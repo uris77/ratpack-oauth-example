@@ -28,3 +28,18 @@ dependencies {
 task stage{
     dependsOn installApp
 }
+
+
+run{
+    Properties properties = new Properties(System.getProperties())
+    FileInputStream inputStream = new FileInputStream(".env")
+    try {
+        properties.load(inputStream)
+        System.setProperties(properties)
+    } catch (Exception e) {
+        e.printStackTrace()
+    }
+    System.getProperties().each { prop ->
+        systemProperty prop.key, prop.value
+    }
+}
