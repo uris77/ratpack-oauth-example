@@ -32,8 +32,8 @@ task stage{
 
 run{
     Properties properties = new Properties(System.getProperties())
-    FileInputStream inputStream = new FileInputStream(".env")
     try {
+        FileInputStream inputStream = new FileInputStream(".env")
         properties.load(inputStream)
         System.setProperties(properties)
         System.getProperties().each { prop ->
